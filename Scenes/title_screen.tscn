@@ -1,0 +1,119 @@
+[gd_scene load_steps=8 format=3 uid="uid://bu61wxga1dbq2"]
+
+[ext_resource type="Texture2D" uid="uid://dqjkqwwkjd845" path="res://Assets/UI/title-background.png" id="1_mcw2t"]
+[ext_resource type="FontFile" uid="uid://81no405ow18u" path="res://Assets/UI/Steamwreck-07pd.ttf" id="2_xaonx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_45elc"]
+texture = ExtResource("1_mcw2t")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_10bjd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7xg2e"]
+bg_color = Color(0.763812, 0.763807, 0.763808, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3w2yb"]
+bg_color = Color(0.991164, 0.991164, 0.991164, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lj6ye"]
+bg_color = Color(0.991164, 0.991164, 0.991164, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_offset = Vector2(0, 3.41)
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_45elc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -88.0
+offset_right = 4693.0
+offset_bottom = 1092.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/font = ExtResource("2_xaonx")
+theme_override_font_sizes/font_size = 750
+text = "Project Lighthouse"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="Button" parent="."]
+layout_mode = 2
+offset_left = 25.0
+offset_top = 60.0
+offset_right = 1480.0
+offset_bottom = 684.0
+scale = Vector2(0.05, 0.05)
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 0
+theme_override_constants/icon_max_width = 0
+theme_override_fonts/font = ExtResource("2_xaonx")
+theme_override_font_sizes/font_size = 500
+theme_override_styles/focus = SubResource("StyleBoxEmpty_10bjd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7xg2e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3w2yb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lj6ye")
+text = "Start Game"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 2
+offset_left = 161.0
+offset_top = 60.0
+offset_right = 1261.0
+offset_bottom = 684.0
+scale = Vector2(0.05, 0.05)
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 0
+theme_override_constants/icon_max_width = 0
+theme_override_fonts/font = ExtResource("2_xaonx")
+theme_override_font_sizes/font_size = 500
+theme_override_styles/focus = SubResource("StyleBoxEmpty_10bjd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7xg2e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3w2yb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lj6ye")
+text = "Exit
+"
