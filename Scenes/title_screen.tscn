@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bu61wxga1dbq2"]
+[gd_scene load_steps=9 format=3 uid="uid://bu61wxga1dbq2"]
 
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_dccng"]
-[ext_resource type="PackedScene" uid="uid://dvcg07j8y0nau" path="res://Scenes/title_background.tscn" id="2_jy1by"]
+[ext_resource type="Texture2D" uid="uid://dqjkqwwkjd845" path="res://Assets/UI/title-background.png" id="1_mcw2t"]
 [ext_resource type="FontFile" uid="uid://81no405ow18u" path="res://Assets/UI/Steamwreck-07pd.ttf" id="2_xaonx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_45elc"]
+texture = ExtResource("1_mcw2t")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_10bjd"]
 
@@ -39,7 +42,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dccng")
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("2_jy1by")]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_45elc")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -63,10 +73,10 @@ vertical_alignment = 1
 
 [node name="Title" type="Button" parent="."]
 layout_mode = 2
-offset_left = 58.0
-offset_top = 51.0
-offset_right = 1513.0
-offset_bottom = 675.0
+offset_left = 25.0
+offset_top = 60.0
+offset_right = 1480.0
+offset_bottom = 684.0
 scale = Vector2(0.05, 0.05)
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
@@ -87,10 +97,10 @@ text = "Start Game"
 
 [node name="Exit" type="Button" parent="."]
 layout_mode = 2
-offset_left = 132.0
-offset_top = 51.0
-offset_right = 1172.0
-offset_bottom = 675.0
+offset_left = 161.0
+offset_top = 60.0
+offset_right = 1261.0
+offset_bottom = 684.0
 scale = Vector2(0.05, 0.05)
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
@@ -109,6 +119,3 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3w2yb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lj6ye")
 text = "Exit
 "
-
-[connection signal="next_level" from="ParallaxBackground" to="." method="_on_parallax_background_next_level"]
-[connection signal="pressed" from="Title" to="ParallaxBackground" method="_on_title_pressed"]
