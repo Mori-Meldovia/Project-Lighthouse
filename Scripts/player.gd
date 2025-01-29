@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 # Reference to the RayCast2D node
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
+@onready var sprite_map: AnimatedSprite2D = $AnimatedSprite2D
 
 # A dictionary that maps input map actions to direction vectors
 const inputs = {
@@ -16,6 +17,15 @@ var moves = []
 
 # Stores the grid size, which is 16 (same as one tile)
 var grid_size = 16
+
+func _process(_delta):
+	if Input.is_action_pressed("Right"):
+		sprite_map.play("right")
+	elif Input.is_action_pressed("Left"):
+		sprite_map.play("left")
+	else:
+		sprite_map.play("default")
+
 
 # Calls the move function with the appropriate input key
 # if any input map action is triggered
