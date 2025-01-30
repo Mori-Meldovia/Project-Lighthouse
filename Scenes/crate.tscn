@@ -3,10 +3,11 @@
 [ext_resource type="Script" path="res://Scripts/crate.gd" id="1_png8r"]
 [ext_resource type="Texture2D" uid="uid://brrah00x7i5e8" path="res://Assets/Crate.png" id="2_adkgb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yh88"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xh35"]
 size = Vector2(16, 16)
 
 [node name="Crate" type="StaticBody2D"]
+collision_mask = 0
 script = ExtResource("1_png8r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -16,4 +17,5 @@ texture = ExtResource("2_adkgb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_0yh88")
+shape = SubResource("RectangleShape2D_6xh35")
+debug_color = Color(0.0242147, 0.587017, 0.765885, 0.42)

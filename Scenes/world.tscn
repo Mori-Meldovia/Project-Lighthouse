@@ -12,6 +12,7 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e016m"]
 texture = ExtResource("2_giblb")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:1/0 = 0
 0:2/0 = 0
 0:3/0 = 0
@@ -32,7 +33,7 @@ size = Vector2(16, 16)
 [node name="World" type="Node2D"]
 script = ExtResource("1_bj38h")
 
-[node name="Crate" parent="." instance=ExtResource("1_wmanb")]
+[node name="Crate" parent="." groups=["attachable"] instance=ExtResource("1_wmanb")]
 position = Vector2(48, 32)
 
 [node name="Walls" type="TileMapLayer" parent="."]
