@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://42pvo5ghb6sy"
-path="res://.godot/imported/Lightbulb.png-1ba5f772a98b5cc3cfcc4f6c269b68a6.ctex"
+uid="uid://brrah00x7i5e8"
+path="res://.godot/imported/Crate.png-04006d4de1c8a65ef10a5e796d94111e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Lightbulb.png"
-dest_files=["res://.godot/imported/Lightbulb.png-1ba5f772a98b5cc3cfcc4f6c269b68a6.ctex"]
+source_file="res://Assets/Components/Crate.png"
+dest_files=["res://.godot/imported/Crate.png-04006d4de1c8a65ef10a5e796d94111e.ctex"]
 
 [params]
 

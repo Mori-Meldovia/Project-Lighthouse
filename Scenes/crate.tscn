@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpnwklt4ssjgd"]
+[gd_scene load_steps=5 format=3 uid="uid://dpnwklt4ssjgd"]
 
 [ext_resource type="Script" path="res://Scripts/crate.gd" id="1_png8r"]
-[ext_resource type="Texture2D" uid="uid://brrah00x7i5e8" path="res://Assets/Crate.png" id="2_adkgb"]
+[ext_resource type="Texture2D" uid="uid://brrah00x7i5e8" path="res://Assets/Components/Crate.png" id="2_adkgb"]
+[ext_resource type="Texture2D" uid="uid://bxywijl06s0at" path="res://Assets/Components/Crossover.png" id="3_v3615"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6xh35"]
 size = Vector2(16, 16)
@@ -10,10 +11,15 @@ size = Vector2(16, 16)
 collision_mask = 0
 script = ExtResource("1_png8r")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Default" type="Sprite2D" parent="."]
 z_index = 5
 position = Vector2(8, 8)
 texture = ExtResource("2_adkgb")
+
+[node name="Attached" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.333333)
+texture = ExtResource("3_v3615")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)

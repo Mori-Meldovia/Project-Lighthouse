@@ -1,6 +1,5 @@
 extends Node2D
 
-
 const DIRS = [Vector2i.UP, Vector2i.RIGHT, Vector2i.DOWN, Vector2i.LEFT]
 
 # Called when the node enters the scene tree for the first time.
@@ -13,12 +12,8 @@ func _ready() -> void:
 	power_tick()
 	print(power)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
+func _input(event: InputEvent) -> void:
+	power_tick()
 
 const GRID_SIZE = 16
 const W = 15
@@ -38,7 +33,6 @@ func getComponentAt(coord: Vector2i):
 		if pos2coord(child.position) == coord:
 			return child
 	return null
-
 
 var power = []
 
@@ -64,7 +58,6 @@ func power_tick():
 	updated[player_pos.y][player_pos.x] = true
 	for dir in DIRS:
 		power_update(player_pos + dir, "source", new_power, updated)
-		
 	
 	# check from the spawnpoint
 	# TODO
@@ -75,28 +68,31 @@ func power_tick():
 	for y in range(H):
 		for x in range(W):
 			power[y][x] = max(new_power[y][x], power[y][x] - 1)
-	
 
 const can_power = {
 	"source": {
+		"attachable" : 0,
 		"bulb": 0,
 		"gear": 1,
 		"axle": 0,
 		"gearbox": 1,
 	},
 	"gear": {
+		"attachable" : 0,
 		"bulb": 0,
 		"gear": 1,
 		"axle": 0,
 		"gearbox": 1,
 	},
 	"axle": {
+		"attachable" : 0,
 		"bulb": 0,
 		"gear": 0,
 		"axle": 1,
 		"gearbox": 1,
 	},
 	"gearbox": {
+		"attachable" : 0,
 		"bulb": 1,
 		"gear": 1,
 		"axle": 1,
@@ -112,6 +108,13 @@ func power_update(pos, source, power, updated):
 	updated[pos.y][pos.x] = true
 	
 	var group = getComponentAt(pos).get_groups()[0];
+
+	var object_at_position = getComponentAt(pos)
+	print(object_at_position)
+	if (object_at_position.has_method("power_on")):
+		object_at_position.power_on()
+	elif (object_at_position.has_method("power_off")):
+		object_at_position.power_off()
 	
 	if (!group):
 		return

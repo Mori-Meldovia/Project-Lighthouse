@@ -29,10 +29,6 @@ func _process(_delta):
 		sprite_map.play("left")
 	else:
 		sprite_map.play("default")
-	
-	# Consistently check for Q (ui_cancel) input when an object is attached
-	if attached_object and Input.is_action_pressed("detach_object"):
-		detach_object()
 
 # Calls the move function with the appropriate input key
 # if any input map action is triggered
@@ -49,8 +45,12 @@ func _input(event):
 	if event.is_action("Restart"):
 		restart()
 	
+	# Consistently check for Q (ui_cancel) input when an object is attached
+	if attached_object and Input.is_action_pressed("Detach"):
+		detach_object()
+	
 	# Attach object
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("Attach"):
 		attempt_attachment()
 
 # Updates the direction of the RayCast2D according to the input key
@@ -68,24 +68,16 @@ func move(action, newMove):
 			position = new_player_pos
 			attached_object.position = new_player_pos + attachment_offset
 			
-			if newMove:
-				moves.append(destination)
 	else:
 		if not ray_cast_2d.is_colliding():
 			position += destination
-			if newMove:
-				moves.append(destination)
+	
+	if newMove:
+		moves.append(destination)
 
 func attempt_attachment():
-	var directions = {
-		"right": Vector2.RIGHT,
-		"left": Vector2.LEFT,
-		"down": Vector2.DOWN,
-		"up": Vector2.UP
-	}
-	
-	for dir in directions.keys():
-		ray_cast_2d.target_position = directions[dir] * grid_size
+	for dir in inputs.keys():
+		ray_cast_2d.target_position = inputs[dir] * grid_size
 		ray_cast_2d.force_raycast_update()
 		
 		if ray_cast_2d.is_colliding():
@@ -93,12 +85,19 @@ func attempt_attachment():
 			
 			if collider.is_in_group("attachable"):
 				attached_object = collider
-				attachment_offset = directions[dir] * grid_size
+				attachment_offset = inputs[dir] * grid_size
+				
+				if attached_object.has_method("attached"):
+					attached_object.attached()
 				return
 
 func detach_object():
 	if attached_object:
 		attached_object.global_position = position + attachment_offset  # Keep the object in its place
+		
+		if attached_object.has_method("detached"):
+				attached_object.detached()
+		
 		attached_object = null
 		attachment_offset = Vector2.ZERO
 

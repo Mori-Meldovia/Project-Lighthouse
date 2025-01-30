@@ -1,11 +1,12 @@
 extends StaticBody2D  # The crate does NOT move
 
 @export var health: int = 2  # Number of hits before breaking
-@onready var sprite = $Sprite2D  # Reference to the crate sprite
+@onready var unboundSprite = $Default  # Reference to the crate sprite
+@onready var boundSprite = $Attached
+
 
 func _ready():
-	add_to_group("attachable")  # Ensure this object can be attached
-	print("Crate ready! Health:", health)
+	boundSprite.hide()
 
 func break_crate():
 	health -= 1
@@ -15,4 +16,12 @@ func break_crate():
 		queue_free()  # Remove the crate from the game
 		print("Crate destroyed!")
 	else:
-		sprite.modulate = Color(1, 0.5, 0.5)  # Change color to show damage
+		unboundSprite.modulate = Color(1, 0.5, 0.5)  # Change color to show damage
+
+func attached():
+	unboundSprite.hide()
+	boundSprite.show()
+
+func detached():
+	unboundSprite.show()
+	boundSprite.hide()

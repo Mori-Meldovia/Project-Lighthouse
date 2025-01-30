@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjp3r1irash4"
-path="res://.godot/imported/Power.png-6a265343564365d3602a2ce834520d4b.ctex"
+uid="uid://bxywijl06s0at"
+path="res://.godot/imported/Crossover.png-1af7d883dc6e2e15acfe10747a8cd675.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Power.png"
-dest_files=["res://.godot/imported/Power.png-6a265343564365d3602a2ce834520d4b.ctex"]
+source_file="res://Assets/Components/Crossover.png"
+dest_files=["res://.godot/imported/Crossover.png-1af7d883dc6e2e15acfe10747a8cd675.ctex"]
 
 [params]
 

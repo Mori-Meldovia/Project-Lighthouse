@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://capkdy4swixbw"
-path="res://.godot/imported/wall.png-73e39cdcdbefc4d5604b0a5ce162a96d.ctex"
+uid="uid://4hndo47dceyb"
+path="res://.godot/imported/Axle.png-c077da50200fe30b439da2e8a7b8b470.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/wall.png"
-dest_files=["res://.godot/imported/wall.png-73e39cdcdbefc4d5604b0a5ce162a96d.ctex"]
+source_file="res://Assets/Components/Axle.png"
+dest_files=["res://.godot/imported/Axle.png-c077da50200fe30b439da2e8a7b8b470.ctex"]
 
 [params]
 

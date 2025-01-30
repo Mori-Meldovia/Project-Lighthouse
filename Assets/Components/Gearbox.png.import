@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxywijl06s0at"
-path="res://.godot/imported/Crossover.png-d3fbfc9d4f84e0a9d1afa96e03b2b7bf.ctex"
+uid="uid://bkl54jdigg1h"
+path="res://.godot/imported/Gearbox.png-7944854d301875e51bf68b3747363dfd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Crossover.png"
-dest_files=["res://.godot/imported/Crossover.png-d3fbfc9d4f84e0a9d1afa96e03b2b7bf.ctex"]
+source_file="res://Assets/Components/Gearbox.png"
+dest_files=["res://.godot/imported/Gearbox.png-7944854d301875e51bf68b3747363dfd.ctex"]
 
 [params]
 

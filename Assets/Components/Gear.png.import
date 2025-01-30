@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4hndo47dceyb"
-path="res://.godot/imported/Axle.png-85ba618eddeba58f5bbe5eb2314803f5.ctex"
+uid="uid://cf7jfnrocdrug"
+path="res://.godot/imported/Gear.png-3c5921dcb2b85a5ff23036369a1d2495.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Axle.png"
-dest_files=["res://.godot/imported/Axle.png-85ba618eddeba58f5bbe5eb2314803f5.ctex"]
+source_file="res://Assets/Components/Gear.png"
+dest_files=["res://.godot/imported/Gear.png-3c5921dcb2b85a5ff23036369a1d2495.ctex"]
 
 [params]
 

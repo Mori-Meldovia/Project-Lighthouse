@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cylu45mspo4qg"]
+
+[ext_resource type="Script" path="res://Scenes/bulb.gd" id="1_m85a6"]
+[ext_resource type="Texture2D" uid="uid://42pvo5ghb6sy" path="res://Assets/Components/Lightbulb.png" id="1_v6feo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1bwr"]
+size = Vector2(16, 16)
+
+[node name="Lightbulb" type="StaticBody2D" groups=["bulb"]]
+position = Vector2(80, 80)
+script = ExtResource("1_m85a6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_i1bwr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("1_v6feo")
+vframes = 2

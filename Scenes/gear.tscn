@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc6pr5u8kdb8s"]
+
+[ext_resource type="Script" path="res://Scripts/gear.gd" id="1_8yfgh"]
+[ext_resource type="Texture2D" uid="uid://cf7jfnrocdrug" path="res://Assets/Components/Gear.png" id="2_0junr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2h7y"]
+size = Vector2(16, 16)
+
+[node name="Gear" type="StaticBody2D" groups=["gear"]]
+position = Vector2(64, 64)
+script = ExtResource("1_8yfgh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_i2h7y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("2_0junr")
+hframes = 2
+vframes = 3
+frame = 1
