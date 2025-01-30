@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw6c88s1dxg5g"
-path="res://.godot/imported/Crate.webp-0592cc2b59f09211f0ef6f0ae1f0cbf8.ctex"
+uid="uid://bxywijl06s0at"
+path="res://.godot/imported/Crossover.png-d3fbfc9d4f84e0a9d1afa96e03b2b7bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Crate.webp"
-dest_files=["res://.godot/imported/Crate.webp-0592cc2b59f09211f0ef6f0ae1f0cbf8.ctex"]
+source_file="res://Assets/Crossover.png"
+dest_files=["res://.godot/imported/Crossover.png-d3fbfc9d4f84e0a9d1afa96e03b2b7bf.ctex"]
 
 [params]
 

@@ -112,14 +112,14 @@ size = Vector2(16, 16)
 script = ExtResource("1_5oxdl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(16, 16)
+position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_n0tvc")
 animation = &"left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16, 16)
+position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_tuggq")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(16, 16)
+position = Vector2(15, 8)
 target_position = Vector2(16, 0)
