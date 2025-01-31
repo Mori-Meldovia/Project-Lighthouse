@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=4 uid="uid://xxicix15p27d"]
+[gd_scene load_steps=10 format=4 uid="uid://xxicix15p27d"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_bj38h"]
 [ext_resource type="PackedScene" uid="uid://dpnwklt4ssjgd" path="res://Scenes/crate.tscn" id="1_wmanb"]
 [ext_resource type="Texture2D" uid="uid://capkdy4swixbw" path="res://Assets/Components/wall.png" id="2_giblb"]
 [ext_resource type="PackedScene" uid="uid://baevd6h0talmj" path="res://Scenes/player.tscn" id="2_u1jks"]
 [ext_resource type="PackedScene" uid="uid://dc6pr5u8kdb8s" path="res://Scenes/gear.tscn" id="5_6mi3o"]
+[ext_resource type="PackedScene" uid="uid://cvslrwyj7d5qh" path="res://Scenes/gearbox.tscn" id="6_6mhj7"]
 [ext_resource type="PackedScene" uid="uid://cylu45mspo4qg" path="res://Scenes/bulb.tscn" id="7_cksx3"]
-[ext_resource type="Texture2D" uid="uid://bkl54jdigg1h" path="res://Assets/Components/Gearbox.png" id="7_xeyhl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e016m"]
 texture = ExtResource("2_giblb")
@@ -19,9 +19,6 @@ texture = ExtResource("2_giblb")
 [sub_resource type="TileSet" id="TileSet_harhb"]
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_e016m")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvwfj"]
-size = Vector2(16, 16)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_bj38h")
@@ -38,17 +35,6 @@ position = Vector2(48, 32)
 
 [node name="Gear" parent="." groups=["attachable"] instance=ExtResource("5_6mi3o")]
 
-[node name="Gearbox" type="StaticBody2D" parent="." groups=["gearbox"]]
-position = Vector2(80, 64)
+[node name="Gearbox" parent="." groups=["attachable"] instance=ExtResource("6_6mhj7")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gearbox"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_bvwfj")
-
-[node name="Sprite2D" type="Sprite2D" parent="Gearbox"]
-position = Vector2(8, 8)
-texture = ExtResource("7_xeyhl")
-hframes = 4
-vframes = 3
-
-[node name="Lightbulb" parent="." instance=ExtResource("7_cksx3")]
+[node name="Lightbulb" parent="." groups=["attachable"] instance=ExtResource("7_cksx3")]

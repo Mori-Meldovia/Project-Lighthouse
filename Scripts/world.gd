@@ -68,35 +68,55 @@ func power_tick():
 	for y in range(H):
 		for x in range(W):
 			power[y][x] = max(new_power[y][x], power[y][x] - 1)
+	
+	for x in range(power.size()):
+		for y in range(power[x].size()):
+			var position_to_test = Vector2i(y, x)
+			var object_at_position = getComponentAt(position_to_test)
+			print(position_to_test)
+			
+			if power[x][y] > 0 && object_at_position.has_method("power_on"):
+				object_at_position.power_on()
+			elif object_at_position != null && object_at_position.has_method("power_off"): 
+				object_at_position.power_off()
 
 const can_power = {
 	"source": {
 		"attachable" : 0,
+		"axelH": 1,
+		"axelV": 1,
 		"bulb": 0,
 		"gear": 1,
 		"axle": 0,
 		"gearbox": 1,
+		"player": 0,
 	},
 	"gear": {
 		"attachable" : 0,
+		"axelH": 1,
+		"axelV": 1,
 		"bulb": 0,
 		"gear": 1,
-		"axle": 0,
 		"gearbox": 1,
+		"player": 0,
 	},
 	"axle": {
 		"attachable" : 0,
+		"axelH": 1,
+		"axelV": 1,
 		"bulb": 0,
 		"gear": 0,
-		"axle": 1,
 		"gearbox": 1,
+		"player": 0,
 	},
 	"gearbox": {
 		"attachable" : 0,
+		"axelH": 1,
+		"axelV": 1,
 		"bulb": 1,
 		"gear": 1,
-		"axle": 1,
 		"gearbox": 0,
+		"player": 0,
 	}
 }
 
@@ -108,13 +128,10 @@ func power_update(pos, source, power, updated):
 	updated[pos.y][pos.x] = true
 	
 	var group = getComponentAt(pos).get_groups()[0];
+	#var object_at_position = getComponentAt(pos)
+	#if (object_at_position.has_method("power_on")):
+		#object_at_position.power_on()
 
-	var object_at_position = getComponentAt(pos)
-	print(object_at_position)
-	if (object_at_position.has_method("power_on")):
-		object_at_position.power_on()
-	elif (object_at_position.has_method("power_off")):
-		object_at_position.power_off()
 	
 	if (!group):
 		return
