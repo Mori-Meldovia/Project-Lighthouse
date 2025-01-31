@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=3 uid="uid://dvcg07j8y0nau"]
+
+[ext_resource type="Script" path="res://Scripts/parallax_background.gd" id="1_gwha8"]
+[ext_resource type="Texture2D" uid="uid://dl7t7dr0nisgm" path="res://Assets/UI/Free City Background/Background PNG/City Backround Layer9.png" id="2_2rwus"]
+[ext_resource type="Texture2D" uid="uid://bobv2xuxxfcky" path="res://Assets/UI/Free City Background/Background PNG/City Backround Layer8.png" id="3_usn0g"]
+[ext_resource type="Texture2D" uid="uid://b4044llkqt4m2" path="res://Assets/UI/Free City Background/Background PNG/City Backround Layer7.png" id="4_k2olh"]
+[ext_resource type="Texture2D" uid="uid://d322o48n6jsmq" path="res://Assets/UI/Free City Background/Background PNG/City Backround Layer6.png" id="5_72usb"]
+[ext_resource type="Texture2D" uid="uid://djlqr44dlcpun" path="res://Assets/UI/Free City Background/Background PNG/City Backround Layer5.png" id="6_6ek7v"]
+[ext_resource type="Texture2D" uid="uid://bysu2tmbi2wcs" path="res://Assets/UI/Free City Background/Background PNG/City Backround Layer4.png" id="7_2bcfm"]
+[ext_resource type="Texture2D" uid="uid://cpt45nyffttui" path="res://Assets/UI/Free City Background/Background PNG/City Backround Layer3.png" id="8_rk70x"]
+[ext_resource type="Texture2D" uid="uid://dull88qg7wl3" path="res://Assets/UI/Free City Background/Background PNG/City Backround Layer2.png" id="9_dtwak"]
+[ext_resource type="Texture2D" uid="uid://b744ar88ijetv" path="res://Assets/UI/Free City Background/Levels/Level1Base.png" id="10_qmvgm"]
+[ext_resource type="Texture2D" uid="uid://4uwvuv5eygq2" path="res://Assets/UI/Free City Background/Background PNG/City Backround Layer1.png" id="10_wcg66"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_gwha8")
+
+[node name="CityBackdrop" type="Sprite2D" parent="."]
+position = Vector2(120, 88)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_2rwus")
+
+[node name="CloudLayer4" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CloudLayer4"]
+position = Vector2(120, 88)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_usn0g")
+
+[node name="CloudLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(260, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CloudLayer3"]
+position = Vector2(120, 88)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_k2olh")
+
+[node name="CityBackground" type="Sprite2D" parent="."]
+position = Vector2(120, 88)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_72usb")
+
+[node name="CityMidground" type="Sprite2D" parent="."]
+position = Vector2(120, 88)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_6ek7v")
+
+[node name="CloudLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(300, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CloudLayer2"]
+position = Vector2(120, 88)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_2bcfm")
+
+[node name="CityForeground" type="Sprite2D" parent="."]
+position = Vector2(120, 88)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_rk70x")
+
+[node name="CloudLayer1" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(350, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CloudLayer1"]
+position = Vector2(120, 88)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_dtwak")
+
+[node name="Level1Base" type="Sprite2D" parent="."]
+position = Vector2(120, 88)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_qmvgm")
+
+[node name="CityBase" type="Sprite2D" parent="."]
+position = Vector2(120, 88)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_wcg66")
+
+[node name="Level1" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 16.0
+offset_top = 143.0
+offset_right = 24.0
+offset_bottom = 153.0
+
+[connection signal="pressed" from="Level1" to="." method="_on_level_1_pressed"]
