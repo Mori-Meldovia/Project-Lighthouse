@@ -19,6 +19,6 @@ func detached():
 
 func power_on():
 	self_sprite.play("powered")
-
+	
 func power_off():
 	self_sprite.play("default")

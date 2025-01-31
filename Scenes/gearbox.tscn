@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cvslrwyj7d5qh"]
+[gd_scene load_steps=11 format=3 uid="uid://cvslrwyj7d5qh"]
 
 [ext_resource type="Texture2D" uid="uid://bkl54jdigg1h" path="res://Assets/Components/Gearbox.png" id="1_invw7"]
 [ext_resource type="Script" path="res://Scripts/gearbox.gd" id="1_qt2pi"]
@@ -6,37 +6,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bvwfj"]
 size = Vector2(16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ivk40"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1ov3"]
 atlas = ExtResource("1_invw7")
 region = Rect2(0, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6gdjq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyuqb"]
 atlas = ExtResource("1_invw7")
-region = Rect2(16, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gcym2"]
-atlas = ExtResource("1_invw7")
-region = Rect2(32, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_exk4l"]
-atlas = ExtResource("1_invw7")
-region = Rect2(48, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_76seb"]
-atlas = ExtResource("1_invw7")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5d3px"]
-atlas = ExtResource("1_invw7")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dscql"]
-atlas = ExtResource("1_invw7")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xr1ue"]
-atlas = ExtResource("1_invw7")
-region = Rect2(48, 0, 16, 16)
+region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rfy3r"]
 atlas = ExtResource("1_invw7")
@@ -58,16 +34,7 @@ region = Rect2(48, 16, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ivk40")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6gdjq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gcym2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_exk4l")
+"texture": SubResource("AtlasTexture_e1ov3")
 }],
 "loop": true,
 "name": &"attached",
@@ -75,16 +42,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_76seb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5d3px")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dscql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xr1ue")
+"texture": SubResource("AtlasTexture_wyuqb")
 }],
 "loop": true,
 "name": &"default",
@@ -108,7 +66,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Gearbox" type="StaticBody2D" groups=["gearbox"]]
+[node name="Gearbox_Attachable" type="StaticBody2D" groups=["gearbox"]]
 position = Vector2(80, 64)
 script = ExtResource("1_qt2pi")
 
@@ -119,3 +77,4 @@ shape = SubResource("RectangleShape2D_bvwfj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_2k28w")
+animation = &"attached"
