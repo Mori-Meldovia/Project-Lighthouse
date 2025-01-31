@@ -1,0 +1,118 @@
+[gd_scene load_steps=10 format=4 uid="uid://bdfis04cjoq6a"]
+
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_hs4dn"]
+[ext_resource type="Texture2D" uid="uid://capkdy4swixbw" path="res://Assets/Components/wall.png" id="2_lluwo"]
+[ext_resource type="PackedScene" uid="uid://baevd6h0talmj" path="res://Scenes/player.tscn" id="3_yssuo"]
+[ext_resource type="PackedScene" uid="uid://dpnwklt4ssjgd" path="res://Scenes/crate.tscn" id="4_wktiy"]
+[ext_resource type="PackedScene" uid="uid://cylu45mspo4qg" path="res://Scenes/bulb.tscn" id="5_x2d5x"]
+[ext_resource type="PackedScene" uid="uid://bpsbr8jws5v81" path="res://Scenes/gearbox.tscn" id="6_k2y7a"]
+[ext_resource type="PackedScene" uid="uid://cyhy83sf855d0" path="res://Scenes/gear.tscn" id="7_66sir"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e016m"]
+texture = ExtResource("2_lluwo")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_harhb"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_e016m")
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_hs4dn")
+
+[node name="Walls" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAEAAQAAAAEAAAABAAIAAQAAAAEAAAABAAMAAQAAAAEAAAABAAQAAQAAAAEAAAABAAUAAQAAAAEAAAABAAYAAQAAAAEAAAABAAcAAQAAAAEAAAABAAgAAQAAAAIAAAABAAkAAQAAAAEAAAACAAkAAQAAAAEAAAADAAkAAQAAAAEAAAAEAAkAAQAAAAEAAAAFAAkAAQAAAAEAAAAGAAkAAQAAAAEAAAAHAAkAAQAAAAEAAAAIAAkAAQAAAAEAAAAJAAkAAQAAAAEAAAAKAAkAAQAAAAEAAAALAAkAAQAAAAEAAAAMAAkAAQAAAAEAAAANAAkAAQAAAAEAAAAOAAkAAQAAAAAAAAAOAAgAAQAAAAAAAAAOAAcAAQAAAAAAAAAOAAYAAQAAAAAAAAAOAAUAAQAAAAAAAAAOAAQAAQAAAAAAAAAOAAMAAQAAAAAAAAAOAAIAAQAAAAAAAAAOAAEAAQAAAAAAAAANAAEAAQAAAAEAAAAMAAEAAQAAAAEAAAALAAEAAQAAAAEAAAAKAAEAAQAAAAEAAAAJAAEAAQAAAAEAAAAIAAEAAQAAAAEAAAAHAAEAAQAAAAEAAAAGAAEAAQAAAAEAAAAFAAEAAQAAAAEAAAAEAAEAAQAAAAEAAAADAAEAAQAAAAEAAAACAAEAAQAAAAEAAAACAAgAAQAAAAAAAAADAAgAAQAAAAEAAAAEAAgAAQAAAAAAAAAFAAgAAQAAAAAAAAAGAAgAAQAAAAAAAAAHAAgAAQAAAAAAAAAIAAgAAQAAAAAAAAAJAAgAAQAAAAAAAAAKAAgAAQAAAAAAAAALAAgAAQAAAAAAAAAMAAgAAQAAAAAAAAANAAgAAQAAAAEAAAANAAcAAQAAAAEAAAANAAYAAQAAAAEAAAANAAUAAQAAAAEAAAANAAMAAQAAAAEAAAANAAIAAQAAAAEAAAAMAAIAAQAAAAAAAAALAAIAAQAAAAAAAAAKAAIAAQAAAAAAAAAJAAIAAQAAAAAAAAAIAAIAAQAAAAAAAAAHAAIAAQAAAAAAAAAGAAIAAQAAAAAAAAAFAAIAAQAAAAEAAAAEAAIAAQAAAAAAAAADAAIAAQAAAAAAAAACAAIAAQAAAAAAAAACAAMAAQAAAAEAAAADAAMAAQAAAAEAAAAEAAMAAQAAAAEAAAAFAAMAAQAAAAEAAAAGAAMAAQAAAAEAAAAHAAMAAQAAAAEAAAAIAAMAAQAAAAEAAAAJAAMAAQAAAAEAAAAKAAMAAQAAAAEAAAALAAMAAQAAAAEAAAAMAAMAAQAAAAEAAAAMAAQAAQAAAAEAAAALAAQAAQAAAAEAAAAKAAQAAQAAAAEAAAAJAAQAAQAAAAEAAAAIAAQAAQAAAAEAAAAHAAQAAQAAAAEAAAAGAAQAAQAAAAAAAAAFAAQAAQAAAAEAAAAEAAUAAQAAAAAAAAADAAUAAQAAAAEAAAACAAUAAQAAAAEAAAACAAQAAQAAAAEAAAADAAQAAQAAAAEAAAAEAAQAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAEAAAAIAAUAAQAAAAEAAAAJAAUAAQAAAAEAAAAKAAUAAQAAAAEAAAAKAAYAAQAAAAEAAAALAAYAAQAAAAEAAAAMAAYAAQAAAAEAAAAMAAUAAQAAAAEAAAALAAUAAQAAAAEAAAAFAAUAAQAAAAAAAAAEAAYAAQAAAAAAAAADAAYAAQAAAAEAAAACAAYAAQAAAAEAAAAFAAYAAQAAAAEAAAAGAAYAAQAAAAAAAAAHAAYAAQAAAAEAAAAIAAYAAQAAAAEAAAAJAAYAAQAAAAEAAAAKAAcAAQAAAAEAAAALAAcAAQAAAAEAAAAMAAcAAQAAAAEAAAAJAAcAAQAAAAEAAAAIAAcAAQAAAAEAAAAHAAcAAQAAAAEAAAAGAAcAAQAAAAEAAAAFAAcAAQAAAAEAAAAEAAcAAQAAAAEAAAADAAcAAQAAAAEAAAACAAcAAQAAAAEAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAAAAAgAAQAAAAAAAAAAAAkAAQAAAAAAAAAOAAoAAQAAAAAAAAANAAoAAQAAAAAAAAAMAAoAAQAAAAAAAAALAAoAAQAAAAAAAAAKAAoAAQAAAAAAAAAJAAoAAQAAAAAAAAAIAAoAAQAAAAAAAAAHAAoAAQAAAAAAAAAGAAoAAQAAAAAAAAAFAAoAAQAAAAAAAAAEAAoAAQAAAAAAAAADAAoAAQAAAAAAAAACAAoAAQAAAAAAAAABAAoAAQAAAAAAAAAAAAoAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAIAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAKAAAAAQAAAAAAAAALAAAAAQAAAAAAAAAMAAAAAQAAAAAAAAANAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAANAAQAAQAAAAEAAAA=")
+tile_set = SubResource("TileSet_harhb")
+
+[node name="Player" parent="." instance=ExtResource("3_yssuo")]
+position = Vector2(16, 128)
+
+[node name="Crate" parent="." groups=["attachable"] instance=ExtResource("4_wktiy")]
+position = Vector2(80, 32)
+
+[node name="Lightbulb" parent="." instance=ExtResource("5_x2d5x")]
+position = Vector2(16, 48)
+
+[node name="Gearbox" parent="." groups=["attachable"] instance=ExtResource("6_k2y7a")]
+position = Vector2(16, 32)
+
+[node name="Gearbox2" parent="." groups=["attachable"] instance=ExtResource("6_k2y7a")]
+position = Vector2(208, 32)
+
+[node name="Gear" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(16, 16)
+
+[node name="Gear2" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(32, 16)
+
+[node name="Gear3" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(48, 16)
+
+[node name="Gear4" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(64, 16)
+
+[node name="Gear5" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(80, 16)
+
+[node name="Gear6" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(96, 16)
+
+[node name="Gear7" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(112, 16)
+
+[node name="Gear8" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(128, 16)
+
+[node name="Gear9" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(144, 16)
+
+[node name="Gear10" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(160, 16)
+
+[node name="Gear11" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(176, 16)
+
+[node name="Gear12" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(192, 16)
+
+[node name="Gear13" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(208, 16)
+
+[node name="Gear14" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(144, 64)
+
+[node name="Gear15" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(160, 64)
+
+[node name="Gear17" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(144, 80)
+
+[node name="Gear18" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(144, 96)
+
+[node name="Gear19" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(160, 96)
+
+[node name="Gear20" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(176, 96)
+
+[node name="Gear21" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(176, 80)
+
+[node name="Gear22" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(176, 64)
+
+[node name="Gear23" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(128, 64)
+
+[node name="Gear24" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(128, 96)
+
+[node name="Gear25" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(80, 96)
+
+[node name="Gear16" parent="." groups=["attachable"] instance=ExtResource("7_66sir")]
+position = Vector2(160, 80)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dc6pr5u8kdb8s"]
+[gd_scene load_steps=14 format=3 uid="uid://cyhy83sf855d0"]
 
 [ext_resource type="Script" path="res://Scripts/gear.gd" id="1_8yfgh"]
 [ext_resource type="Texture2D" uid="uid://cf7jfnrocdrug" path="res://Assets/Components/Gear.png" id="2_0junr"]
@@ -6,13 +6,17 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2h7y"]
 size = Vector2(16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kr0ct"]
-atlas = ExtResource("2_0junr")
-region = Rect2(0, 32, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_gph28"]
 atlas = ExtResource("2_0junr")
 region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjjnm"]
+atlas = ExtResource("2_0junr")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfo6h"]
+atlas = ExtResource("2_0junr")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbul1"]
 atlas = ExtResource("2_0junr")
@@ -22,22 +26,46 @@ region = Rect2(0, 16, 16, 16)
 atlas = ExtResource("2_0junr")
 region = Rect2(16, 16, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_acgj8"]
+atlas = ExtResource("2_0junr")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ah17"]
+atlas = ExtResource("2_0junr")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h68xe"]
+atlas = ExtResource("2_0junr")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xgv5"]
+atlas = ExtResource("2_0junr")
+region = Rect2(16, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_er0nd"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kr0ct")
-}],
-"loop": true,
-"name": &"attached",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gph28")
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjjnm")
+}],
+"loop": true,
+"name": &"default_attached",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfo6h")
+}],
+"loop": true,
+"name": &"default_disabled",
 "speed": 5.0
 }, {
 "frames": [{
@@ -50,9 +78,31 @@ animations = [{
 "loop": true,
 "name": &"powered",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acgj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ah17")
+}],
+"loop": true,
+"name": &"powered_attached",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h68xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xgv5")
+}],
+"loop": true,
+"name": &"powered_disabled",
+"speed": 5.0
 }]
 
-[node name="Gear_Attachable" type="StaticBody2D" groups=["attachable", "gear"]]
+[node name="Gear" type="StaticBody2D" groups=["gear"]]
 position = Vector2(64, 64)
 script = ExtResource("1_8yfgh")
 

@@ -53,6 +53,7 @@ func _input(event):
 	if event.is_action_pressed("Attach"):
 		attempt_attachment()
 
+
 # Updates the direction of the RayCast2D according to the input key
 # and moves one grid if no collision is detected
 func move(action, newMove):

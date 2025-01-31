@@ -10,10 +10,19 @@ func _ready() -> void:
 			row.push_back(0);
 		power.push_back(row)
 	power_tick()
-	print(power)
+	#print(power)
 
 func _input(event: InputEvent) -> void:
 	power_tick()
+	
+	# win condition
+	var player_pos = pos2coord(get_tree().get_nodes_in_group("player")[0].position)
+	for dir in DIRS:
+		var bulb = getComponentAt(player_pos + dir)
+		if bulb && bulb.is_in_group("bulb"):
+			if power[(player_pos + dir).y][(player_pos + dir).x] > 0:
+				# WIN
+				print("WIN")
 
 const GRID_SIZE = 16
 const W = 15
@@ -73,7 +82,7 @@ func power_tick():
 		for y in range(power[x].size()):
 			var position_to_test = Vector2i(y, x)
 			var object_at_position = getComponentAt(position_to_test)
-			print(position_to_test)
+			#print(position_to_test)
 			
 			if power[x][y] > 0 && object_at_position.has_method("power_on"):
 				object_at_position.power_on()
@@ -125,8 +134,6 @@ func power_update(pos, source, power, updated):
 	if (updated[pos.y][pos.x] || pos.x < 0 || pos.x >= W || pos.y < 0 || pos.y >= H || !getComponentAt(pos) || getComponentAt(pos).get_groups().size() < 1):
 		return
 	
-	updated[pos.y][pos.x] = true
-	
 	var group = getComponentAt(pos).get_groups()[0];
 	#var object_at_position = getComponentAt(pos)
 	#if (object_at_position.has_method("power_on")):
@@ -138,6 +145,8 @@ func power_update(pos, source, power, updated):
 	
 	if can_power[source][group]:
 		power[pos.y][pos.x] = can_power[source][group]
+		if power[pos.y][pos.x] > 0:
+			updated[pos.y][pos.x] = true
 		
 		# recursively power, if it can power
 		if can_power.has(group):
