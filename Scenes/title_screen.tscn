@@ -62,6 +62,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Title" type="Button" parent="."]
+visible = false
 layout_mode = 2
 offset_left = 86.0
 offset_top = 59.0
@@ -86,6 +87,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_lj6ye")
 text = "Start Game"
 
 [node name="Exit" type="Button" parent="."]
+visible = false
 layout_mode = 2
 offset_left = 108.0
 offset_top = 92.0
